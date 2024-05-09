@@ -7,55 +7,64 @@ import {
     Modal
 } from 'react-native';
 
+import ButtonMenu from '../components/ButtonMenu'
+
 export default props => {
-    return(
-       <Modal onRequestClose={props.onCancel} visible={props.isVisible} animationType='slide' transparent={true}>
+    return (
+        <Modal onRequestClose={props.onCancel} visible={props.isVisible} animationType='slide' transparent={true}>
             <View style={styles.frame}>
                 <View style={styles.container}>
-                    <Text style={styles.title}>Selecione o nível</Text>
+                    <Text style={styles.title}>MENU</Text>
                     <TouchableOpacity
-                        style={[styles.button, styles.bgEasy]}
-                        onPress={()=> props.onLevelSelected(0.1)}>
-                        <Text style={styles.buttonLabel}>Fácil</Text>
+                        style={[styles.newGame]}
+                        onPress={() => props.onNewGame()}>
+                        <Text style={styles.newGameLabel}>NEW GAME</Text>
                     </TouchableOpacity>
-                    <TouchableOpacity
-                        style={[styles.button, styles.bgMedium]}
-                        onPress={()=> props.onLevelSelected(0.2)}>
-                        <Text style={styles.buttonLabel}>Médio</Text>
-                    </TouchableOpacity>
-                    <TouchableOpacity
-                        style={[styles.button, styles.bgHard]}
-                        onPress={()=> props.onLevelSelected(0.3)}>
-                        <Text style={styles.buttonLabel}>Difícil</Text>
-                    </TouchableOpacity>
-                    {/* <TouchableOpacity
-                    TRANSFORMAR CADA BTN EM UM COMPONENT A PARTE
-                        style={[styles.button, styles.bgContraVento]}
-                        onPress={()=> props.onLevelSelected(0.7)}>
-                        <Text style={styles.buttonLabel}>Contra o vento</Text>
-                    </TouchableOpacity> */}
+                    <ButtonMenu
+                        difficultyLevel="easy"
+                        buttonLabel="EASY"
+                        onLevelSelected={props.onLevelSelected}
+                    />
+                    <ButtonMenu
+                        difficultyLevel="medium"
+                        buttonLabel="MEDIUM"
+                        onLevelSelected={props.onLevelSelected}
+                    />
+                    <ButtonMenu
+                        difficultyLevel="hard"
+                        buttonLabel="HARD"
+                        onLevelSelected={props.onLevelSelected}
+                    />
                 </View>
             </View>
-       </Modal>
+        </Modal>
     );
 }
 
 const styles = StyleSheet.create({
-    frame:{
+    frame: {
         flex: 1,
         alignItems: 'center',
         justifyContent: 'center',
-        backgroundColor: 'rgba(0,0,0,0.6)'
+        backgroundColor: 'rgba(0,0,0,0.6)',
+        maxHeight: '100%'
     },
     container: {
-        backgroundColor: '#EEE',
+        backgroundColor: '#0F1115',
+        borderWidth: 5,
+        borderLeftColor: '#EAEAEA',
+        borderTopColor: '#EAEAEA',
+        borderRightColor: '#797979',
+        borderBottomColor: '#797979',
         alignItems: 'center',
         justifyContent: 'center',
-        padding: 15
+        padding: 20,
+        maxHeight: 400
     },
     title: {
-        fontSize: 30,
-        fontWeight: 'bold'
+        fontSize: 25,
+        fontWeight: 'bold',
+        color: '#FF2E41'
     },
     button: {
         marginTop: 10,
@@ -66,17 +75,29 @@ const styles = StyleSheet.create({
         color: '#EEE',
         fontWeight: 'bold'
     },
-    bgEasy:{
+    bgEasy: {
         backgroundColor: 'green'
     },
-    bgMedium:{
+    bgMedium: {
         backgroundColor: 'blue'
     },
-    bgHard:{
+    bgHard: {
         backgroundColor: 'red'
     },
-    bgContraVento:{
-        backgroundColor: 'black',
-        color: 'white'
+    newGame: {
+        borderWidth: 5,
+        borderLeftColor: '#EAEAEA',
+        borderTopColor: '#EAEAEA',
+        borderRightColor: '#858585',
+        borderBottomColor: '#858585',
+        minWidth: '85%',
+        alignItems: 'center',
+        marginTop: 10,
+        padding: 5
+    },
+    newGameLabel: {
+        fontSize: 20,
+        color: '#EAEAEA',
+        fontWeight: 'bold'
     }
 });

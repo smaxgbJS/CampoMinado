@@ -24,21 +24,21 @@ const styles = StyleSheet.create({
         position: 'absolute',
         height: 14,
         width: 2,
-        backgroundColor: '#222',
+        backgroundColor: '#EAEAEA',
         marginLeft: 9
     },
     flag: {
         position: 'absolute',
         height: 5,
         width: 6,
-        backgroundColor: '#F22',
+        backgroundColor: '#FF2E63',
         marginLeft: 11
     },
     baseOne: {
         position: 'absolute',
         height: 2,
         width: 6,
-        backgroundColor: '#222',
+        backgroundColor: '#EAEAEA',
         marginLeft: 7,
         marginTop: 10
     },
@@ -46,7 +46,7 @@ const styles = StyleSheet.create({
         position: 'absolute',
         height: 2,
         width: 10,
-        backgroundColor: '#222',
+        backgroundColor: '#B6B6B6',
         marginLeft: 5,
         marginTop: 12
     },
