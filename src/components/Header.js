@@ -10,16 +10,16 @@ import Flag from './Flag';
 export default props => {
     return (
         <View style={styles.container}>
+            <TouchableOpacity style={styles.button} onPress={props.openMenu}>
+                <Text style={styles.buttonLabel}>MENU</Text>
+            </TouchableOpacity>
+
             <View style={styles.flagContainer}>
-                <TouchableOpacity onPress={props.onFlagPress} style={styles.flagButton}>
+                <View style={styles.flagButton}>
                     <Flag bigger></Flag>
-                </TouchableOpacity>
+                </View>
                 <Text style={styles.flagsLeft}>= {props.flagsLeft}</Text>
             </View>
-
-            <TouchableOpacity style={styles.button} onPress={props.onNewGame}>
-                <Text style={styles.buttonLabel}>New Game</Text>
-            </TouchableOpacity>
         </View>
     );
 }
@@ -28,10 +28,9 @@ const styles = StyleSheet.create({
     container: {
         flex: 1,
         flexDirection: 'row',
-        backgroundColor: 'purple',
+        backgroundColor: '#252A34',
         alignItems: 'center',
         justifyContent: 'space-around',
-        paddingTop: 20,
         paddingHorizontal: 20
     },
     flagContainer: {
@@ -44,16 +43,23 @@ const styles = StyleSheet.create({
     flagsLeft: {
         fontSize: 30,
         fontWeight: 'bold',
-        paddingTop: 5,
-        marginLeft: 20
+        marginLeft: 20,
+        color: '#FF2E63'
     },
     button: {
-        backgroundColor: '#999',
-        padding: 5
+        backgroundColor: '#252A34',
+        borderWidth: 5,
+        borderLeftColor: '#EAEAEA',
+        borderTopColor: '#EAEAEA',
+        borderRightColor: '#858585',
+        borderBottomColor: '#858585',
+        padding: 5,
+        paddingLeft: 30,
+        paddingRight: 30
     },
     buttonLabel: {
-        fontSize: 20,
-        color: '#DDD',
+        fontSize: 22,
+        color: '#FF2E63',
         fontWeight: 'bold'
     }
 });

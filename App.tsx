@@ -147,9 +147,10 @@ function App(): React.JSX.Element {
                 <LevelSelection 
                     isVisible={showLevelSelection} 
                     onLevelSelected={onLevelSelected}
-                    onCancel={() => setState({showLevelSelection:false}) }></LevelSelection>
-                <Header flagsLeft={minesAmount() - flagsUsed(board)} onNewGame={createState}
-                    onFlagPress={() => setState({showLevelSelection:true})}>
+                    onNewGame={createState}
+                    onCancel={() => setState({showLevelSelection:false}) }>
+                </LevelSelection>
+                <Header flagsLeft={minesAmount() - flagsUsed(board)} openMenu={() => setState({showLevelSelection:true})}>
                 </Header>
             </View>
             <View style={styles.board}>
