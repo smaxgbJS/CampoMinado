@@ -1,5 +1,3 @@
-Aqui está a versão personalizada do README para o seu projeto de campo minado:
-
 ---
 
 # Projeto Campo Minado - React Native
