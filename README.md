@@ -1,5 +1,3 @@
----
-
 # Projeto Campo Minado - React Native
 
 Este é um projeto de campo minado criado com **React Native**, usando a CLI oficial da [@react-native-community](https://github.com/react-native-community/cli).
